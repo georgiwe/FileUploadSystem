@@ -1,0 +1,61 @@
+extends ./common/layout.jade
+block main-content
+	.container.text-center
+		.row
+			.col-sm-6
+				.panel.panel-primary
+					.panel-heading
+						h3.panel-title Registered Users
+					.panel-body
+						| #{stats.registeredUsersCount}
+			.col-sm-6
+				.panel.panel-primary
+					.panel-heading
+						h3.panel-title Uploaded Files
+					.panel-body
+						| #{stats.uploadedFilesCount}
+
+		.row.text-left
+			h1
+				| Public Uploads
+
+			table(class='table table-striped table-hover')
+				thead
+					tr
+						th Filename
+						th Extension
+						th Upload Date
+						th Download
+				tbody
+					if (!uploads.length)
+						tr
+							td(colspan='4', class='text-center')
+								| No files.
+
+					- for (var i = 0; i < uploads.length; i++) {
+							-var upload = uploads[i];
+							tr
+								td #{upload.filename}
+								td #{upload.extension}
+								td #{upload.uploadDate}
+								td
+									span(class='glyphicon glyphicon-download-alt download-butt')
+									input(type='hidden' value='#{upload.id}')
+					-}
+
+			div.text-center
+				ul(class='pagination')
+					li
+						a.prev-arrow
+							| «
+					- for(var j = 0; j < (uploads.length / 10); j++) {
+						li
+							a.page-num
+								| #{j + 1}
+					- }
+					li
+						a.next-arrow
+							| »
+block page-scripts
+	script(src='js/file-management.js')
+	script(src='js/pagination.js')

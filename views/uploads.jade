@@ -1,0 +1,23 @@
+extends common/layout.jade
+
+block main-content
+	.container
+		form.form-horizontal(method='post', enctype="multipart/form-data")
+			fieldset
+				legend File Upload
+				.form-group
+					.row
+						label.col-lg-2.control-label(for='file-select1') Choose file(s):
+					.row
+						div.col-sm-4.select-pair
+							input#file-select1.form-control(type='file', name='file1', placeholder='File')
+							input#file-private.form-control(type='checkbox', name='isprivate1')
+				.form-group
+					.col-lg-3
+						a.btn.btn-primary.pull-right(href='/')
+							| Cancel
+						button.btn.btn-primary.pull-right(type='submit')
+							| Upload
+	
+block page-scripts
+	script(src='js/uploads/dynamic-file-addition.js')

@@ -1,0 +1,21 @@
+input[type=file] {
+	margin-bottom: 5px;
+}
+
+table .glyphicon {
+	font-size: 20px;
+	display: inline-block;
+	margin-left: 30%;
+}
+
+.del-butt, .download-butt, .privacy-butt {
+	cursor: pointer;
+}
+
+.pagination {
+	margin: 0 auto !important;
+}
+
+.pagination a {
+	cursor: pointer;
+}

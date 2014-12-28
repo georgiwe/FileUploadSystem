@@ -1,0 +1,34 @@
+header.nav.navbar-default
+            .container
+                .navbar-header
+                    a.navbar-brand(href="/") Title of my app
+                .navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href="/") Home
+                        if (!userData)
+                            li
+                                a(href="/register") Register
+                            li
+                                a(href="/login") Login
+                        else
+                            li
+                                a(href="/upload") Upload
+                            li
+                                a(href="/profile") #{userData.username}
+                            li
+                                a(href="/logout") Logout
+
+            if (successMessage)
+                .container
+                    br
+                    .alert.alert-success.alert-dismissable(role="alert") #{successMessage}
+
+            if (errorMessage)
+                .container
+                    br
+                    .alert.alert-danger.alert-dismissable(role="alert") #{errorMessage}
+
+        .container
+            br
+            block main-content

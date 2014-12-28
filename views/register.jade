@@ -1,0 +1,24 @@
+extends ./common/layout
+block main-content
+	.container
+		form.form-horizontal(method='post')
+			fieldset
+				legend User Registration
+				.form-group
+					label.col-lg-2.control-label(for='username') Username
+					.col-lg-10
+						input#username.form-control(required='required', type='text', name='username', placeholder='Username')
+				.form-group
+					label.col-lg-2.control-label(for='password') Password
+					.col-lg-10
+						input#password.form-control(required='required', type='text', name='password', placeholder='Password')
+				.form-group
+					label.col-lg-2.control-label(for='conf-password') Confirm Password
+					.col-lg-10
+						input#conf-password.form-control(required='required', type='text', name='confirmPassword', placeholder='Confirm Password')
+				.form-group
+					.col-lg-3
+						a.btn.btn-primary.pull-right(href='/')
+							| Cancel
+						button.btn.btn-primary.pull-right(type='submit')
+							| Register
