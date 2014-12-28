@@ -4,7 +4,7 @@ block main-content
 	.container
 		form.form-horizontal(method='post', enctype="multipart/form-data")
 			fieldset
-				legend File Upload
+				legend Basic Uploader
 				.form-group
 					.row
 						label.col-lg-2.control-label(for='file-select1') Choose file(s):
@@ -12,6 +12,8 @@ block main-content
 						div.col-sm-4.select-pair
 							input#file-select1.form-control(type='file', name='file1', placeholder='File')
 							input#file-private.form-control(type='checkbox', name='isprivate1')
+					span
+						| * checkbox means file will be private
 				.form-group
 					.col-lg-3
 						a.btn.btn-primary.pull-right(href='/')

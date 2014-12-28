@@ -1,7 +1,7 @@
 header.nav.navbar-default
             .container
                 .navbar-header
-                    a.navbar-brand(href="/") Title of my app
+                    a.navbar-brand(href="/") File Upload
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li
@@ -19,6 +19,7 @@ header.nav.navbar-default
                             li
                                 a(href="/logout") Logout
 
+        .container
             if (successMessage)
                 .container
                     br
@@ -29,6 +30,5 @@ header.nav.navbar-default
                     br
                     .alert.alert-danger.alert-dismissable(role="alert") #{errorMessage}
 
-        .container
             br
             block main-content
