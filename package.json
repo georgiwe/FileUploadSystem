@@ -1,13 +1,13 @@
 {
-  "name": "express.js-homework",
+  "name": "file-upload-system",
   "version": "0.0.1",
-  "description": "",
+  "description": "A simple file upload system",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "Georgi Prodanov",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.9.0",
@@ -21,5 +21,8 @@
     "multer": "^0.1.6",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
