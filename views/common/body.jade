@@ -23,12 +23,12 @@ header.nav.navbar-default
             if (successMessage)
                 .container
                     br
-                    .alert.alert-success.alert-dismissable(role="alert") #{successMessage}
+                    .text-center.alert.alert-success.alert-dismissable(role="alert") #{successMessage}
 
             if (errorMessage)
                 .container
                     br
-                    .alert.alert-danger.alert-dismissable(role="alert") #{errorMessage}
+                    .text-center.alert.alert-danger.alert-dismissable(role="alert") #{errorMessage}
 
             br
             block main-content
