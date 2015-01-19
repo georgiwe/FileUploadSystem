@@ -71,7 +71,7 @@ function getProfilePage (req, res, next) {
 			data.forEach(function (upload) {
 				uploads.push({
 					id: upload._id,
-					filename: upload.filename,
+					filename: upload.originalName,
 					extension: upload.extension,
 					uploadDate: upload.uploadDate,
 					isPrivate: upload.private

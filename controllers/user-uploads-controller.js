@@ -37,7 +37,8 @@ function uploadFiles (req, res, next) {
 			private: isPrivate,
 			filename: file.name,
 			extension: file.extension,
-			uploadDate: new Date()
+			uploadDate: new Date(),
+			originalName: file.originalname.replace(/\.\w+$/, '')
 		};
 
 		uploads.push(fileData);
@@ -103,7 +104,8 @@ function download (req, res, next) {
 		var fileUserObjId = file.user.toString();
 
 		if (!file.private || (fileUserObjId === currUserObjId)) {
-			res.download(file.filepath, file.filename, function (err) {
+			var downloadFilename = file.originalName + '.' + file.extension;
+			res.download(file.filepath, downloadFilename, function (err) {
 				if (err) {
 					req.session.errorMessage = uknownFileDownloadErrorMsg;
 					res.status(400).end();

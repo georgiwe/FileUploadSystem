@@ -10,7 +10,11 @@ var userSchema = new Schema({
 	password: { type: String, require: '{PATH} is required', required: true, set: hashPassword },
 	salt: String,
 	points: Number,
-	uploads: [UserUpload]
+	uploads: {
+		type: [],
+		ref: 'UserUpload',
+
+	}
 });
 
 userSchema.path('username').validate(function (username) {
