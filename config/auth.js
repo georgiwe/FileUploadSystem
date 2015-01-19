@@ -6,13 +6,13 @@ function login (req, res, next) {
 
 		if (!user) { 
 			req.session.errorMessage = 'Invalid username or password.';
-			return res.redirect('/login'); 
+			next(null);
 		}
 
 		req.logIn(user, function(err) {
 			if (err) { return next(err); }
 
-			return res.redirect('/');
+			next(null);
 		});
 
 	})(req, res, next);

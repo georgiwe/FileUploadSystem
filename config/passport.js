@@ -27,7 +27,6 @@ passport.use(new LocalPassport(function (username, password, done) {
 
 passport.serializeUser(function (user, done) {
 	if (user) { 
-		// check cause if user hasnt authenticated, it will blow up
 		return done(null, user._id);
 	}
 });
@@ -46,5 +45,3 @@ passport.deserializeUser(function (id, done) {
 		}
 	})
 });
-
-// console.log('Passport initialized.');

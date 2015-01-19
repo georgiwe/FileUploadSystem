@@ -2,8 +2,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
-    passport = require('passport'),
-    multer = require('multer');
+    passport = require('passport');
 
 var secret = process.env.SESSION_SECRET || 'some other secret';
 
